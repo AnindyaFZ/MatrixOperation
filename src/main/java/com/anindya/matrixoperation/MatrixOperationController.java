@@ -17,7 +17,7 @@ public class MatrixOperationController
     @javafx.fxml.FXML
     private TextField matrix2RowTexfield;
     @javafx.fxml.FXML
-    private ComboBox selectOperationCombobox;
+    private ComboBox<String> selectOperationCombobox;
     @javafx.fxml.FXML
     private Label resultLabel;
     Matrix m1=null,m2=null,m3=null;
@@ -48,7 +48,8 @@ public class MatrixOperationController
     @javafx.fxml.FXML
     public void addMatrixElementOnMouseClicked(Event event) {
         if (m1==null)
-            m1= new Matrix(Integer.parseInt(matrix1RowTexfield.getText()),
+            m1= new Matrix(
+                    Integer.parseInt(matrix1RowTexfield.getText()),
                     Integer.parseInt(matrix1ColTexfield.getText())
             );
 
@@ -65,7 +66,8 @@ public class MatrixOperationController
             if (rowIndex<m1.vals.length-1){
                 rowIndex++;colIndex=0;
 
-            } else if (rowIndex==m1.vals.length-1) {
+            }
+            else if (rowIndex==m1.vals.length-1) {
                 resultLabel.setText("Matrix Overflow!");
 
             }
