@@ -20,7 +20,7 @@ public class MatrixOperationController
     private ComboBox<String> selectOperationCombobox;
     @javafx.fxml.FXML
     private Label resultLabel;
-    Matrix m1=null,m2=null,m3=null;
+    Matrix m1=null,m2=null,m3;
     int rowIndex,colIndex;
     @javafx.fxml.FXML
     private TextField elementTextField;
@@ -40,9 +40,7 @@ public class MatrixOperationController
                     "\n\nAdded Matrix :\n" + m3.toString()
             );
         }
-        else if(selectedOperation.equals("sub")) {
 
-        }
 
     }
     @javafx.fxml.FXML
